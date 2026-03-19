@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKG Explorer - Note Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="User navigation">
+        <div class="sidebar__logo">
+          <div class="sidebar__logo-mark">PK</div>
+          <div class="sidebar__logo-text">
+            <span class="sidebar__logo-title">PKG</span>
+            <span class="sidebar__logo-subtitle">Explorer</span>
+          </div>
+        </div>
+
+        <nav aria-label="Primary">
+          <p class="sidebar__section-title">Overview</p>
+          <div class="sidebar__nav">
+            <a href="index.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🏠</span>
+              <span class="sidebar__link-label">Dashboard</span>
+            </a>
+            <a href="editor.html" class="sidebar__link">
+              <span class="sidebar__link-icon">✏️</span>
+              <span class="sidebar__link-label">Editor</span>
+            </a>
+            <a href="graph.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🕸</span>
+              <span class="sidebar__link-label">Graph View</span>
+            </a>
+            <a href="explorer.html" class="sidebar__link sidebar__link--active">
+              <span class="sidebar__link-icon">📚</span>
+              <span class="sidebar__link-label">Explorer</span>
+            </a>
+            <a href="search.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🔍</span>
+              <span class="sidebar__link-label">Search</span>
+            </a>
+          </div>
+
+          <p class="sidebar__section-title">Account</p>
+          <div class="sidebar__nav">
+            <a href="settings.html" class="sidebar__link">
+              <span class="sidebar__link-icon">⚙️</span>
+              <span class="sidebar__link-label">Settings</span>
+            </a>
+            <a href="login.html" class="sidebar__link">
+              <span class="sidebar__link-icon">⏻</span>
+              <span class="sidebar__link-label">Sign out</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="sidebar__user">
+            <div class="sidebar__user-avatar">U</div>
+            <div class="sidebar__user-meta">
+              <span>PKG User</span><br />
+              <span>you@secondbrain.app</span>
+            </div>
+          </div>
+          <div class="sidebar__mode-pill">
+            <span>📂</span>
+            <span>Note library</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="main__header">
+          <div class="main__title-group">
+            <h1 class="main__title">Explorer</h1>
+            <p class="main__subtitle">
+              Kho lưu trữ toàn bộ ghi chú trong PKG của bạn.
+            </p>
+          </div>
+          <div class="main__header-actions">
+            <a href="editor.html" class="btn btn--primary">New note</a>
+          </div>
+        </header>
+
+        <section class="main__content" aria-label="Explorer content">
+          <article class="card">
+            <header class="card__header">
+              <div>
+                <h2 class="card__title">Bộ lọc & tìm kiếm</h2>
+                <p class="card__subtitle">
+                  Lọc theo tags, sắp xếp theo ngày để duyệt nhanh kho ghi chú.
+                </p>
+              </div>
+            </header>
+            <div class="filter-bar">
+              <div class="filter-bar__search">
+                <input
+                  type="search"
+                  placeholder="Tìm theo tiêu đề, nội dung..."
+                  aria-label="Search notes"
+                />
+              </div>
+              <div class="filter-bar__controls">
+                <select aria-label="Filter by tag">
+                  <option>Filter by tag</option>
+                  <option>pkm</option>
+                  <option>research</option>
+                  <option>idea</option>
+                </select>
+                <select aria-label="Sort by">
+                  <option>Sort by date (newest)</option>
+                  <option>Sort by date (oldest)</option>
+                  <option>Sort by backlinks</option>
+                </select>
+                <button class="btn btn--ghost" type="button">Reset</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <div>
+                <h2 class="card__title">Danh sách ghi chú</h2>
+                <p class="card__subtitle">
+                  Dạng bảng mô phỏng để quản lý note: tiêu đề, tags, ngày sửa, backlinks.
+                </p>
+              </div>
+              <span class="badge">Table view</span>
+            </header>
+            <div style="overflow-x: auto">
+              <table class="table" aria-label="Note list table">
+                <thead>
+                  <tr>
+                    <th scope="col">Tiêu đề</th>
+                    <th scope="col">Tags</th>
+                    <th scope="col">Ngày sửa</th>
+                    <th scope="col">Backlinks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Graph thinking for PKM</td>
+                    <td>pkm, graph</td>
+                    <td>5 phút trước</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Obsidian → PKG migration checklist</td>
+                    <td>migration, obsidian</td>
+                    <td>2 giờ trước</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td>Weekly review 2026-03-15</td>
+                    <td>review, weekly</td>
+                    <td>1 ngày trước</td>
+                    <td>7</td>
+                  </tr>
+                  <tr>
+                    <td>Research: second brain tools</td>
+                    <td>research, tools</td>
+                    <td>4 ngày trước</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="card">
+            <header class="card__header">
+              <div>
+                <h2 class="card__title">Dạng lưới (Grid cards)</h2>
+                <p class="card__subtitle">
+                  Một cách khác để duyệt nhanh các ghi chú, giống gallery.
+                </p>
+              </div>
+              <span class="badge">Grid view</span>
+            </header>
+            <div class="note-grid" aria-label="Note grid">
+              <div class="card card--soft">
+                <div class="card__header">
+                  <h3 class="card__title">Daily log - 2026-03-16</h3>
+                  <span class="tag--muted tag">daily</span>
+                </div>
+                <p class="card__meta">
+                  Lần sửa gần nhất: 2 giờ trước · 2 backlinks
+                </p>
+              </div>
+              <div class="card card--soft">
+                <div class="card__header">
+                  <h3 class="card__title">Reading notes: "How to take smart notes"</h3>
+                  <span class="tag">reading</span>
+                </div>
+                <p class="card__meta">
+                  Lần sửa gần nhất: 3 ngày trước · 5 backlinks
+                </p>
+              </div>
+              <div class="card card--soft">
+                <div class="card__header">
+                  <h3 class="card__title">Brainstorm: PKG features</h3>
+                  <span class="tag--muted tag">idea</span>
+                </div>
+                <p class="card__meta">
+                  Lần sửa gần nhất: 1 tuần trước · 4 backlinks
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

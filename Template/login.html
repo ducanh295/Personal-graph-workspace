@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKG Auth - Login / Register</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <main class="auth-page">
+      <section class="auth-card" aria-label="Authentication">
+        <header class="auth-card__header">
+          <h1 class="auth-card__title">Personal Knowledge Graph</h1>
+          <p class="auth-card__subtitle">
+            Cổng vào ứng dụng PKG – nơi lưu trữ "bộ não thứ hai" của bạn.
+          </p>
+        </header>
+
+        <!-- Hidden radios để tạo tabs chỉ với CSS -->
+        <input type="radio" name="auth-tab" id="tab-login" checked />
+        <input type="radio" name="auth-tab" id="tab-register" />
+
+        <div class="auth-tabs" role="tablist">
+          <label for="tab-login" role="tab" aria-selected="true">Login</label>
+          <label for="tab-register" role="tab" aria-selected="false"
+            >Register</label
+          >
+        </div>
+
+        <div class="auth-panels">
+          <!-- Login panel -->
+          <div class="auth-panel--login" role="tabpanel">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input
+                id="login-email"
+                type="email"
+                placeholder="you@secondbrain.app"
+              />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Mật khẩu</label>
+              <input id="login-password" type="password" placeholder="••••••••" />
+            </div>
+            <div class="form-row" style="justify-content: space-between">
+              <span class="card__meta">Quên mật khẩu?</span>
+              <button class="btn btn--primary" type="button">Đăng nhập</button>
+            </div>
+          </div>
+
+          <!-- Register panel -->
+          <div class="auth-panel--register" role="tabpanel">
+            <div class="form-group">
+              <label for="register-name">Tên hiển thị</label>
+              <input
+                id="register-name"
+                type="text"
+                placeholder="Tên bạn muốn hiển thị trong PKG..."
+              />
+            </div>
+            <div class="form-group">
+              <label for="register-email">Email</label>
+              <input
+                id="register-email"
+                type="email"
+                placeholder="you@secondbrain.app"
+              />
+            </div>
+            <div class="form-row">
+              <div class="form-group" style="flex: 1">
+                <label for="register-password">Mật khẩu</label>
+                <input
+                  id="register-password"
+                  type="password"
+                  placeholder="••••••••"
+                />
+              </div>
+              <div class="form-group" style="flex: 1">
+                <label for="register-password-confirm">Nhập lại mật khẩu</label>
+                <input
+                  id="register-password-confirm"
+                  type="password"
+                  placeholder="••••••••"
+                />
+              </div>
+            </div>
+            <button class="btn btn--primary" type="button" style="width: 100%">
+              Tạo tài khoản
+            </button>
+          </div>
+        </div>
+
+        <footer style="margin-top: 1rem">
+          <p class="card__meta">
+            Bằng việc tiếp tục, bạn đồng ý với "second brain" được lưu trữ trong PKG
+            trên thiết bị của bạn.
+          </p>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
+

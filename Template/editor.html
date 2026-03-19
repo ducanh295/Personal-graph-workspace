@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PKG Editor - Note Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" aria-label="User navigation">
+        <div class="sidebar__logo">
+          <div class="sidebar__logo-mark">PK</div>
+          <div class="sidebar__logo-text">
+            <span class="sidebar__logo-title">PKG</span>
+            <span class="sidebar__logo-subtitle">Note editor</span>
+          </div>
+        </div>
+
+        <nav aria-label="Primary">
+          <p class="sidebar__section-title">Overview</p>
+          <div class="sidebar__nav">
+            <a href="index.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🏠</span>
+              <span class="sidebar__link-label">Dashboard</span>
+            </a>
+            <a href="editor.html" class="sidebar__link sidebar__link--active">
+              <span class="sidebar__link-icon">✏️</span>
+              <span class="sidebar__link-label">Editor</span>
+            </a>
+            <a href="graph.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🕸</span>
+              <span class="sidebar__link-label">Graph View</span>
+            </a>
+            <a href="explorer.html" class="sidebar__link">
+              <span class="sidebar__link-icon">📚</span>
+              <span class="sidebar__link-label">Explorer</span>
+            </a>
+            <a href="search.html" class="sidebar__link">
+              <span class="sidebar__link-icon">🔍</span>
+              <span class="sidebar__link-label">Search</span>
+            </a>
+          </div>
+
+          <p class="sidebar__section-title">Account</p>
+          <div class="sidebar__nav">
+            <a href="settings.html" class="sidebar__link">
+              <span class="sidebar__link-icon">⚙️</span>
+              <span class="sidebar__link-label">Settings</span>
+            </a>
+            <a href="login.html" class="sidebar__link">
+              <span class="sidebar__link-icon">⏻</span>
+              <span class="sidebar__link-label">Sign out</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="sidebar__user">
+            <div class="sidebar__user-avatar">U</div>
+            <div class="sidebar__user-meta">
+              <span>PKG User</span><br />
+              <span>you@secondbrain.app</span>
+            </div>
+          </div>
+          <div class="sidebar__mode-pill">
+            <span>✶</span>
+            <span>Focused writing</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="main__header">
+          <div class="main__title-group">
+            <h1 class="main__title">Note Editor</h1>
+            <p class="main__subtitle">
+              Soạn thảo nội dung và xem các liên kết liên quan tới ghi chú này.
+            </p>
+          </div>
+          <div class="main__header-actions">
+            <button class="btn btn--ghost" type="button">Preview</button>
+            <button class="btn btn--primary" type="button">Save note</button>
+          </div>
+        </header>
+
+        <section class="main__content" aria-label="Note editor layout">
+          <div class="editor-layout editor-layout--three">
+            <!-- Left meta column -->
+            <aside class="editor-pane" aria-label="Note meta">
+              <article class="card card--soft">
+                <header class="card__header">
+                  <div>
+                    <h2 class="card__title">Thông tin ghi chú</h2>
+                    <p class="card__subtitle">Meta data cơ bản</p>
+                  </div>
+                </header>
+                <div class="form-group">
+                  <label for="note-title">Tiêu đề ghi chú</label>
+                  <input
+                    id="note-title"
+                    type="text"
+                    name="title"
+                    placeholder="Nhập tiêu đề cho ghi chú..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="note-tags">Tags</label>
+                  <input
+                    id="note-tags"
+                    type="text"
+                    name="tags"
+                    placeholder="Ví dụ: pkm, graph, design"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Meta data</label>
+                  <p class="card__meta">
+                    Ngày tạo: <strong>2026-03-16</strong><br />
+                    Ngày sửa gần nhất: <strong>2026-03-16 · 21:00</strong><br />
+                    ID node: <strong>note-graph-001</strong>
+                  </p>
+                </div>
+              </article>
+            </aside>
+
+            <!-- Main editor column -->
+            <section class="editor-pane" aria-label="Main note editor">
+              <div class="editor-toolbar">
+                <div class="editor-toolbar__left">
+                  <span class="badge">Markdown-like editor</span>
+                  <span class="card__meta">
+                    Dùng <code>#</code>, <code>-</code>, <code>**bold**</code>...
+                  </span>
+                </div>
+                <div class="editor-toolbar__right">
+                  <span class="card__meta">~1.240 words · 6 backlinks</span>
+                </div>
+              </div>
+
+              <div
+                class="editor-surface"
+                contenteditable="true"
+                role="textbox"
+                aria-multiline="true"
+                aria-label="Note content"
+              >
+                <p># Graph thinking for PKM</p>
+                <p>
+                  Đây là khu vực soạn thảo mô phỏng markdown cho ghi chú của bạn.
+                  Hãy tưởng tượng nội dung này đang được render như trong một app PKM
+                  hiện đại (Obsidian / Notion style).
+                </p>
+                <p>
+                  - Ý tưởng chính 1<br />
+                  - Ý tưởng chính 2<br />
+                  - Liên kết tới [[Một ghi chú khác]]
+                </p>
+                <p>
+                  Bạn có thể dùng đoạn văn, danh sách, trích dẫn, tiêu đề và liên kết
+                  nội bộ để mô tả "graph" kiến thức của mình.
+                </p>
+              </div>
+            </section>
+
+            <!-- Right backlinks column -->
+            <aside class="editor-pane" aria-label="Backlinks panel">
+              <article class="card card--soft">
+                <header class="card__header">
+                  <div>
+                    <h2 class="card__title">Backlinks</h2>
+                    <p class="card__subtitle">
+                      Những ghi chú đang trỏ tới ghi chú hiện tại.
+                    </p>
+                  </div>
+                  <span class="badge">6 items</span>
+                </header>
+                <ul class="backlinks-list">
+                  <li>
+                    <p class="list-item__title">Weekly review 2026-03-15</p>
+                    <p class="list-item__meta">
+                      Đoạn trích: "...tập trung nhiều hơn vào
+                      <strong>graph thinking</strong> thay vì danh sách tuyến tính..."
+                    </p>
+                  </li>
+                  <li>
+                    <p class="list-item__title">PKG architecture overview</p>
+                    <p class="list-item__meta">
+                      Đoạn trích: "...mỗi note là một node trong
+                      <strong>personal knowledge graph</strong>..."
+                    </p>
+                  </li>
+                  <li>
+                    <p class="list-item__title">Research: second brain tools</p>
+                    <p class="list-item__meta">
+                      Đoạn trích: "...Obsidian, Logseq, PKG là ví dụ về graph-based
+                      PKM..."
+                    </p>
+                  </li>
+                </ul>
+              </article>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+

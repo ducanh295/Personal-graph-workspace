@@ -1,0 +1,86 @@
+/* Admin Dashboard specific styles for PKG */
+
+/* Stats cards */
+.stats-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stats-card__label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stats-card__value {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.stats-card__delta {
+  font-size: 0.78rem;
+}
+
+.stats-card__delta--up {
+  color: var(--success);
+}
+
+.stats-card__delta--down {
+  color: var(--danger);
+}
+
+/* Simple bar chart mock */
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.4rem;
+  height: 160px;
+  margin-top: 0.6rem;
+}
+
+.chart__bar {
+  flex: 1;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7b8bff, #4751ff);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 40%);
+}
+
+.chart__bar--muted {
+  background: linear-gradient(180deg, #555baf, #343972);
+}
+
+.chart__label-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Status pills in admin user table */
+.status-pill {
+  border-radius: var(--radius-pill);
+  padding: 0.08rem 0.5rem;
+  font-size: 0.7rem;
+}
+
+.status-pill--active {
+  background: rgba(77, 209, 159, 0.15);
+  color: var(--success);
+}
+
+.status-pill--banned {
+  background: rgba(255, 75, 107, 0.18);
+  color: #ffb8c7;
+}
+
