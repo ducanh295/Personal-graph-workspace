@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "cd backend && npm run dev",
-    "client": "cd fronted && npm run dev",
+    "backend": "cd Backend && npm run dev",
+    "frontend": "cd Frontend && npm run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\""
   },
   "keywords": [],

@@ -1,11 +1,16 @@
 import mongoose from 'mongoose';
-
-// NHIỆM VỤ CỦA SẾP:
-// 1. Viết hàm async connectDB() để kết nối MongoDB bằng mongoose.connect()
-// 2. Lấy đường dẫn kết nối (URI) từ biến môi trường process.env.MONGO_URI
-// 3. (BẪY LỖI): Phải bọc trong try-catch. Nếu catch được lỗi thì log ra console và dùng process.exit(1) để tắt server!
-// 4. Đừng quên export default hàm này ra nhé.
-
 export const connectDB = async () => {
-    // Code ở đây...
+    try {
+        const mongoUrl = process.env.MONGO_URI as string;
+        if (!mongoUrl) {
+            throw new Error("lỗi: chua khai báo MONGO_URL trong .env");
+        }
+        const conn = await mongoose.connect(mongoUrl);
+        console.log(`kết nối thành công vào database:" ${conn.connection.host}`);
+    } catch (error) {
+        console.error('lỗi database mongodb:', error);
+        process.exit(1)
+    }
 };
+
+export default connectDB;

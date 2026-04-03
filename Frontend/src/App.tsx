@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import MainLayout from './components/layout/MainLayout';
+import AuthModal from './components/common/AuthModal';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
 import Editor from './pages/Editor/Editor';
@@ -12,7 +14,10 @@ import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
-    <Routes>
+    <>
+      <Toaster position="bottom-right" toastOptions={{ style: { background: '#333', color: '#fff' } }} />
+      <AuthModal />
+      <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Dashboard />} />
@@ -26,6 +31,7 @@ function App() {
       {/* Catch all 404 Route */}
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 }
 
